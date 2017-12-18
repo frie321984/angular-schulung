@@ -1,5 +1,6 @@
+import { GlobalErrorHandler } from './GlobalErrorHandler';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -17,7 +18,12 @@ import { AutoInputLengthDirective } from './auto-input-length.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
