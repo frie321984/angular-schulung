@@ -1,4 +1,4 @@
-import { ChucknorrisService } from './chucknorris.service';
+import { ChucknorrisService } from './joke/chucknorris.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +11,7 @@ import { JokeComponent } from './joke/joke.component';
 import { CrazycasePipe } from './shared/listbox/crazycase.pipe';
 import { ListboxComponent } from './shared/listbox/listbox.component';
 import { AboutComponent } from './about/about.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AboutComponent } from './about/about.component';
     JokeComponent,
     CrazycasePipe,
     ListboxComponent,
-    AboutComponent
+    AboutComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
