@@ -13,6 +13,7 @@ import { ListboxComponent } from './shared/listbox/listbox.component';
 import { AboutComponent } from './about/about.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'contacts',
     component: ContactListComponent
+  }  ,
+  {
+    path: '**',
+    component: NotfoundComponent
   }
 ];
 
@@ -44,7 +49,8 @@ const routes: Routes = [
     ListboxComponent,
     AboutComponent,
     NavigationComponent,
-    ContactListComponent
+    ContactListComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
