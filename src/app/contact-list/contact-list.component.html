@@ -1,0 +1,7 @@
+<h2>Kontakte</h2>
+
+<app-listbox 
+    [items]="contacts"
+    [editEnabled]="true"
+    (editItemClick)="contactClicked($event)"
+></app-listbox>

@@ -1,3 +1,4 @@
+import { RandomAllowedGuard } from './random-allowed.guard';
 import { ChucknorrisService } from './joke/chucknorris.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -14,12 +15,17 @@ import { AboutComponent } from './about/about.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: TodolistComponent
+  },
+  {
+    path: 'access-denied',
+    component: AccessDeniedComponent,
   },
   {
     path: 'about',
@@ -31,6 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'contacts',
+    canActivate: [RandomAllowedGuard],
     component: ContactListComponent
   }  ,
   {
@@ -50,7 +57,8 @@ const routes: Routes = [
     AboutComponent,
     NavigationComponent,
     ContactListComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AccessDeniedComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +66,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [ChucknorrisService],
+  providers: [ChucknorrisService, RandomAllowedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

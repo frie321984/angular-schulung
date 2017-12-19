@@ -1,0 +1,10 @@
+<ul>
+  <!-- [ngClass]="{selectedItem: i==selectedIndex}" -->
+  <!--<li [ngClass]="{large: item.changeCount==1}" -->
+  <li [ngClass]="setClasses(item, i)" *ngFor="let item of items; let i = index;">
+    <a *ngIf="editEnabled" [routerLink]="" (click)="toggleSelect(i)">
+      <span>{{item.text | crazycase : '-~-' : '--~'}}</span>
+    </a>
+    <button *ngIf="removeEnabled" class="icon-cross" (click)="removeItem(i)" alt="remove"></button>
+  </li>
+</ul>

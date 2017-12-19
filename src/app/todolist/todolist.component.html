@@ -1,0 +1,22 @@
+<div *ngIf="!isEditMode">
+  <h3 class="icon-pencil2"> Neues Todo</h3>
+  <input type="text" [(ngModel)]="todoText" (keyup.enter)="addTodo()" [appAutoInputLength]="todos.length*50">
+  <button (click)="addTodo()">OK</button>
+</div>
+
+<div *ngIf="isEditMode">
+  <h3 class="icon-pencil2"> Todo Bearbeiten</h3>
+  <input type="text" [(ngModel)]="todoText" (keyup.enter)="updateTodo()" appAutoInputLength />
+  <button (click)="updateTodo()">OK</button>
+</div>
+
+<p class="small">Drücke [Enter] zum Bestätigen</p>
+
+<app-listbox
+  [items]="todos"
+  [editEnabled]="true"
+  (editItemClick)="enterEditMode($event)"
+  [removeEnabled]="true"
+  (removeItemClick)="removeTodo($event)"></app-listbox>
+
+<app-joke *ngIf="showJoke" ></app-joke>
