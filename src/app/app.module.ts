@@ -12,6 +12,7 @@ import { CrazycasePipe } from './shared/listbox/crazycase.pipe';
 import { ListboxComponent } from './shared/listbox/listbox.component';
 import { AboutComponent } from './about/about.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,15 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+  },
+  {
+    path: 'about/:id',
+    component: AboutComponent,
+  },
+  {
+    path: 'contacts',
+    component: ContactListComponent
   }
 ];
 
@@ -34,7 +43,8 @@ const routes: Routes = [
     CrazycasePipe,
     ListboxComponent,
     AboutComponent,
-    NavigationComponent
+    NavigationComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,
