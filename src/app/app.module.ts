@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TodolistComponent } from './todolist/todolist.component';
-import { AutoInputLengthDirective } from './auto-input-length.directive';
+import { AutoInputLengthDirective } from './todolist/auto-input-length.directive';
 import { JokeComponent } from './joke/joke.component';
 import { CrazycasePipe } from './shared/listbox/crazycase.pipe';
 import { ListboxComponent } from './shared/listbox/listbox.component';
