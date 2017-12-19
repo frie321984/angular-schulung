@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    redirectTo: 'about/no one'
+    component: AboutComponent,
   },
   {
     path: 'about/:id',
