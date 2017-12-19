@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import { AutoInputLengthDirective } from './auto-input-length.directive';
 import { JokeComponent } from './joke/joke.component';
+import { CrazycasePipe } from './todolist/crazycase.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { JokeComponent } from './joke/joke.component';
     AppComponent,
     TodolistComponent,
     AutoInputLengthDirective,
-    JokeComponent
+    JokeComponent,
+    CrazycasePipe
   ],
   imports: [
     BrowserModule,
