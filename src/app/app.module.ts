@@ -14,6 +14,17 @@ import { AboutComponent } from './about/about.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 
+const routes: Routes = [
+  {
+    path: '',
+    component: TodolistComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,14 +40,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([{
-      path: '',
-      component: TodolistComponent
-    },
-  {
-    path: 'about',
-    component: AboutComponent
-  }])
+    RouterModule.forRoot(routes),
   ],
   providers: [ChucknorrisService],
   bootstrap: [AppComponent]
